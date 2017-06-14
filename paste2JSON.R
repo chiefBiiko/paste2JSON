@@ -31,9 +31,9 @@ paste2JSON <- function(x, keys=NULL, ...) {
       if (NULLKEYS) obj else paste0('"', keys[i], '":', obj)
     } else {
       if (NULLKEYS) {
-        jsonlite::toJSON(obj)
+        jsonlite::toJSON(obj, ...)
       } else {
-        paste0('"', keys[i], '":', jsonlite::toJSON(obj))
+        paste0('"', keys[i], '":', jsonlite::toJSON(obj, ...))
       }
     }
   })
